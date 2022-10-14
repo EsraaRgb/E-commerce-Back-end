@@ -1,0 +1,1000 @@
+{
+	"info": {
+		"_postman_id": "3ccc472c-a690-40ea-8f00-d1a75e69cfdf",
+		"name": "Exam one",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23087957"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"esraa\",\r\n    \"lastName\": \"ragab\",\r\n    \"email\": \"esraasou78@gmail.com\",\r\n    \"password\": \"Ss1234\",\r\n    \"cpassword\":\"Ss1234\",\r\n    \"age\":\"21\",\r\n    \"address\":\"cairo\",\r\n    \"gender\":\"female\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"esraasou78@gmail.com\",\r\n    \"password\": \"Ss1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/signin",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg2NDc3YjcyODUwMjc5MWZlMWUyNCIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1Njg5Mzc1LCJleHAiOjE2NjU2OTI5NzV9.pIcGSp8wHyimQ_gCYYaQxYM4sMU6WHmgvSnQESNbHxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2YxYzAzMGQwYmNmNmYwMGU2OTJkNyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1MDgwOTk1LCJleHAiOjE2NjUxMjQxOTV9.tLLVv-EY38-We3af1RqMLJShUxU67YlNvaldLgQA2PE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"esraargbali@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/forgetpassword",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2YxYzAzMGQwYmNmNmYwMGU2OTJkNyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1MDgwOTk1LCJleHAiOjE2NjUxMjQxOTV9.tLLVv-EY38-We3af1RqMLJShUxU67YlNvaldLgQA2PE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"esraa@gmail.com\",\r\n    \"password\": \"123456\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/refreshtoken/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImlhdCI6MTY2NTc1MDAwMCwiZXhwIjoxNjY1ODM2NDAwfQ.aSRQnaVbS00JKpVE9WypRDv8qE5AGfX8swuumOY1LOk",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refreshtoken",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImlhdCI6MTY2NTc1MDAwMCwiZXhwIjoxNjY1ODM2NDAwfQ.aSRQnaVbS00JKpVE9WypRDv8qE5AGfX8swuumOY1LOk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2YxYzAzMGQwYmNmNmYwMGU2OTJkNyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1MDgwOTk1LCJleHAiOjE2NjUxMjQxOTV9.tLLVv-EY38-We3af1RqMLJShUxU67YlNvaldLgQA2PE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"email\": \"esraargbali@gmail.com\",\r\n    \"password\": \"Ss1234\",\r\n    \"cpassword\":\"Ss1234\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/v1/auth/resetpassword/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiRGhqdnpfYmpqSi1LdUtySGZ3MFdJIiwiZW1haWwiOiJlc3JhYXNvdTc4QGdtYWlsLmNvbSIsImlkIjoiNjM0ODAzYmI0NmRiZjFjOGViYWIzNzBiIiwiaWF0IjoxNjY1NjY3MjM2LCJleHAiOjE2NjU2Njc4MzZ9.kfS8B_E-aKZNCVjuD-Sz5qn26WEqGhEFb_eX_3sgZFc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"resetpassword",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RlIjoiRGhqdnpfYmpqSi1LdUtySGZ3MFdJIiwiZW1haWwiOiJlc3JhYXNvdTc4QGdtYWlsLmNvbSIsImlkIjoiNjM0ODAzYmI0NmRiZjFjOGViYWIzNzBiIiwiaWF0IjoxNjY1NjY3MjM2LCJleHAiOjE2NjU2Njc4MzZ9.kfS8B_E-aKZNCVjuD-Sz5qn26WEqGhEFb_eX_3sgZFc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignOut",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzY3MjY5LCJleHAiOjE2NjU3NzA4Njl9.cCWj1PEODEKUZFiyRa95Oo841OmsKscQFGHQ2iYziwc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/signout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get All Users with Products with Comments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzY3MjY5LCJleHAiOjE2NjU3NzA4Njl9.cCWj1PEODEKUZFiyRa95Oo841OmsKscQFGHQ2iYziwc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OGI4NzhhOGM3ZTNmNjEwNWJmYiIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3NjQ1NTAsImV4cCI6MTY2NTc2ODE1MH0.zqN3RZwhPgceUyv0in0hKauQHwn7ey8eysW5aIEnK0c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/634889ae0563f6f818033463",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"634889ae0563f6f818033463"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OGI4NzhhOGM3ZTNmNjEwNWJmYiIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3NjQ1NTAsImV4cCI6MTY2NTc2ODE1MH0.zqN3RZwhPgceUyv0in0hKauQHwn7ey8eysW5aIEnK0c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"esraa\",\r\n    \"lastName\": \"Ragab\",\r\n    \"phone\":\"01227004955\",\r\n    \"email\":\"esraasou123@gmail.com\",\r\n    \"address\":\"Giza\",\r\n    \"gender\":\"female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/profile/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OGI4NzhhOGM3ZTNmNjEwNWJmYiIsImVtYWlsIjoiZXNyYWFzb3UxMjNAZ21haWwuY29tIiwiaWF0IjoxNjY1NzY2NjM4LCJleHAiOjE2NjU3NzAyMzh9.LApcIelzhSYq6aeyYVSZC7eI7ClS-DROJBSM6m0Fq-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2YwODM0ZDA1OGMyYjlhZDU3ZjJiZiIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjUwNzkwOTUsImV4cCI6MTY2NTEyMjI5NX0.ImjQgs3L60vXTFl9fFSpcbKNhsLTrw-NDATA2xc9bUg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"esraasou78@gmail.com\",\r\n    \"oldPassword\": \"Es1234\",\r\n    \"newPassword\":\"Ss1234\",\r\n    \"cpassword\":\"Ss1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/password",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OGI4NzhhOGM3ZTNmNjEwNWJmYiIsImVtYWlsIjoiZXNyYWFzb3UxMjNAZ21haWwuY29tIiwiaWF0IjoxNjY1NzY2NjM4LCJleHAiOjE2NjU3NzAyMzh9.LApcIelzhSYq6aeyYVSZC7eI7ClS-DROJBSM6m0Fq-w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzM2YwODM0ZDA1OGMyYjlhZDU3ZjJiZiIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjUwNzkwOTUsImV4cCI6MTY2NTEyMjI5NX0.ImjQgs3L60vXTFl9fFSpcbKNhsLTrw-NDATA2xc9bUg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Block user By Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzY3MjY5LCJleHAiOjE2NjU3NzA4Njl9.cCWj1PEODEKUZFiyRa95Oo841OmsKscQFGHQ2iYziwc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/user/block/634888b878a8c7e3f6105bfb",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"block",
+								"634888b878a8c7e3f6105bfb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDk5NmJmMzgyY2U0ODYzNjg0ZDQ2YyIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3Njc1MDIsImV4cCI6MTY2NTc3MTEwMn0.OTpQN8Drl2T4GNYAIECSXAe80Hqkr2PPzbiRymIfssw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product\",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzAwMjg0LCJleHAiOjE2NjU3MDM4ODR9.oTs-ofk2VOWfvm2emXH9csL8HqnLpOJsjOa1ciAdqwA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/634882466d35b73fc2f4791f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"634882466d35b73fc2f4791f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product  By Owner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzAwMjg0LCJleHAiOjE2NjU3MDM4ODR9.oTs-ofk2VOWfvm2emXH9csL8HqnLpOJsjOa1ciAdqwA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/634882466d35b73fc2f4791f",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"634882466d35b73fc2f4791f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Product  By Owner",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzAwMjg0LCJleHAiOjE2NjU3MDM4ODR9.oTs-ofk2VOWfvm2emXH9csL8HqnLpOJsjOa1ciAdqwA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/softdelete/63487eb78547f688b61aecd1",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"softdelete",
+								"63487eb78547f688b61aecd1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All  Product  with Comments details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzU0NTEyLCJleHAiOjE2NjU3NTgxMTJ9.dSJsW6BYJ0LsXcdbW2-m4XufbRxnFqyMLlvz5bpxhTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzU0NTEyLCJleHAiOjE2NjU3NTgxMTJ9.dSJsW6BYJ0LsXcdbW2-m4XufbRxnFqyMLlvz5bpxhTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/6348774f01d32e823036a7dd",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"6348774f01d32e823036a7dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like Product By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzQzNjk2LCJleHAiOjE2NjU3NDcyOTZ9.OZusM_pBBMJR_c0wc6g7yK6NtjzwisoCUwjQ6A5KFBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/like/6349328c3420c745c59afd8d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"like",
+								"6349328c3420c745c59afd8d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnLike Product By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzQzNjk2LCJleHAiOjE2NjU3NDcyOTZ9.OZusM_pBBMJR_c0wc6g7yK6NtjzwisoCUwjQ6A5KFBM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/unlike/6348774f01d32e823036a7dd",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"unlike",
+								"6348774f01d32e823036a7dd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDk5NmJmMzgyY2U0ODYzNjg0ZDQ2YyIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3Njc1MDIsImV4cCI6MTY2NTc3MTEwMn0.OTpQN8Drl2T4GNYAIECSXAe80Hqkr2PPzbiRymIfssw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"product updated \",\"description\":\"desc\",\"price\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/product/search?title=product",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"product",
+								"search"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "product"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "Add Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDk5NmJmMzgyY2U0ODYzNjg0ZDQ2YyIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3Njc1MDIsImV4cCI6MTY2NTc3MTEwMn0.OTpQN8Drl2T4GNYAIECSXAe80Hqkr2PPzbiRymIfssw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"this is comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/comment/6349326450bb6ca671de8f42",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"6349326450bb6ca671de8f42"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OWFlMDU2M2Y2ZjgxODAzMzQ2MyIsImVtYWlsIjoiZXNyYWFyZ2JhbGlAZ21haWwuY29tIiwiaWF0IjoxNjY1NzUwODIwLCJleHAiOjE2NjU3NTQ0MjB9.4evUB4qrDjyAF8Jzb0vHW-u0LK3p1UlBAql2ORTjv3g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"updated Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/comment/63495fda19d67c0d8d96c666",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"63495fda19d67c0d8d96c666"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Soft Delete Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNDg4OGI4NzhhOGM3ZTNmNjEwNWJmYiIsImVtYWlsIjoiZXNyYWFzb3U3OEBnbWFpbC5jb20iLCJpYXQiOjE2NjU3NTQ1ODYsImV4cCI6MTY2NTc1ODE4Nn0.ZbYT9aozfw8lkj_bTa-7RDFQmBHOi0_NonePo1z9zzg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"comment\":\"updated Comment\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/comment/63495fda19d67c0d8d96c666",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"comment",
+								"63495fda19d67c0d8d96c666"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
